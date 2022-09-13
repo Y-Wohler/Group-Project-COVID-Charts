@@ -1,0 +1,25 @@
+
+So, CSVReader reads CSv files, that's simple enough.
+
+Ordinary CSV files look something like this.
+
+paint,1,091,england
+brush,2,323,scotland            //Note that they won't look this orderly, the unstack .csv you get from the .gov site has 67~ columns!
+knife,6,643,ireland
+
+Our CSV file reader readers this information, and stores it, turning each word into .
+The way it stores it is as amn ArrayList<String[]>.
+An Arraylist that holds String arrays. Our one will hold items that wil have been seperated by commas.
+
+paint,1,091,england
+brush,2,323,scotland
+knife,6,643,ireland
+
+{["paint"]["1"]["091"]["england"]}
+{["brush"]["2"]["323"]["scotland"]}     //Note that even the numbers are currently strings! If you want to convert them at any point, use Integer.parseInt(string s)
+{["knife"]["6"]["643"]["ireland"]}
+
+Say you want to get "323". You need to get() the information in position 1. Then you'd need use [position] 3.
+array.get(1)[2];
+If you want it as an integer, use the following:
+Integer.parseInt(array.get(1)[2]);

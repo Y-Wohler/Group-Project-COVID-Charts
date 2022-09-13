@@ -1,0 +1,48 @@
+
+
+This package is where the code that will be used in Team 8's team project will be held.
+At the moment of writing this, I am not sure of how many classes will be needed, but i will write on them as I create them.
+
+[1] Run.java
+    This is a runnable Java class that extends Application.
+    *OLD*
+
+[2] GUI.java
+    This is a runnable Java class that extends Application.
+    It will be what is ran when the user wants to use our program.
+    As a .java class that extends Application, it operates very differently from ordinary Classes that use 'psvm' to run.
+    It only runs 'launch()' when ran.
+    However, this contains all the stuff inside 'init(...)', 'start(...)' and 'stop(...)'.
+    The GUI has a number of options.
+
+[3] CSVReader.java
+    This is a class that will be used in 'run.java'.
+    It will be used to read a supplied address, and store the lines within it.
+    This will be access by whatever class is used to create the line graph graphics.
+
+[4] GraphCreator.java
+    This is a class that will be used in order to create and show graphs.
+    It shall have two functions; getLargestNumber() and drawGraph().
+    This will have one function that will be run inside run.java: drawGraph(). drawGraph() takes 4 things:
+    1) What you want to name the graph.
+    2) The ArrayList<String[]> that you'd get from reader.returnStoredStringArray() after you reader.loadFile().
+    3) Takes stage (yeah, this is the thing next to public void start(stage))
+    4)
+
+[4.5] ZoomableGraphCreator.java + ZoomManager
+    This is a reworked version of GraphCreator.java.
+    Similar to its predecessor, however this one has zoom in functionality.
+    To Zoom in,
+
+[6] ConfirmBox.java
+    This is a simple class that can be created in any class at (feasibly) any point.
+    When an instance is created, it is made to be a confirmation popup.
+    It returns a boolean, returning true if 'yes' is pressed, false if 'no' is pressed.
+
+[7] URLFileDownloader.java
+    This is a class that will be used in 'run.java'.
+    It will be used to download the most up to date version of the file supplied by the .gov site.
+    This class will be only be used in 'run.java' in order to download the file.
+
+[8] CreateImage.java
+    This will create a image of the graph, and put it into our file folder.
