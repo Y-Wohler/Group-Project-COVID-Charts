@@ -1,0 +1,31 @@
+package JavaCode;
+
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+public class PopupBox {
+    public static void display(String title, String message){
+        Stage window = new Stage();
+
+        // Set window information.
+        window.initModality(Modality.APPLICATION_MODAL);        // Gives this window priority: you cannot interact with other windows BEFORE this one.
+        window.setTitle(title);
+        window.setMinWidth(250);
+
+        // Create the label and add the text to it.
+        Label label = new Label(message);
+
+        // Organise our buttons and the label with a layout Class.
+        VBox layout = new VBox(10);
+        layout.getChildren().addAll(label);
+
+        // Create the Scene add put the layout Class into it.
+        Scene scene = new Scene(layout);
+        window.setScene(scene);
+        window.showAndWait();       // Basically says "before you can return to another window, this on needs to be closed." To be used with initModality()
+    }
+}
